@@ -44,15 +44,15 @@ export default function LandingPage() {
       <video autoPlay muted loop className="video" src={video1}/>
       
       <div class="info-container">
-      <Link to="/report-sightings" id = "button button-report-sightings">
+      <div class="column" Link to="/report-sightings" id = "button button-report-sightings">
           <button className="button button-report-sightings">Report Sightings</button>
-        </Link>
-        <Link to="/informational" id = "button button-informational">
+        </div>
+        <div class="column" Link to="/informational" id = "button button-informational">
           <button className="button button-informational">Informational</button>
-        </Link>
-        <Link to="/map" id = "button button-map">
+        </div>
+        <div class="column" Link to="/map" id = "button button-map">
         <button className="button button-map">Map</button>
-        </Link>
+        </div>
       </div>
 
       </div>

@@ -82,6 +82,7 @@ const runSampleApiCall = (baseString) =>{
 
   return (
     <div>
+        
       <div>
         {messages.map((message, index) => (
           <div key={index}>
@@ -92,16 +93,18 @@ const runSampleApiCall = (baseString) =>{
           </div>
         ))}
       </div>
+     
+      <div className="video-bg">
+        <div className="container">
+      <video autoPlay muted loop className="video" src={video3}/>
+
       <div><ChatWindow city={"Miami, FL"} plantName={"Pueraria montana"} /></div>
         <div>
           <ReactImageFileToBase64 onCompleted={handleOnCompleted} />
         </div>
-      <div className="video-bg">
-        <div className="container">
-      <video autoPlay muted loop className="video" src={video3}/>
+        
       </div>
       </div>
-    </div>
-      
+      </div>  
   )
 }

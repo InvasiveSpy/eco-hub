@@ -62,7 +62,36 @@ body {
   color: #00bcd4;
 }
 
-@media screen and (max-width: 769px) {
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+  height: 20px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  color: #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  z-index: 2;
+}
+
+.button-container {
+position: absolute;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -70,40 +99,40 @@ body {
   }
 
   .nav-links {
-    margin-top: 20px;
+    position: absolute;
+    background-color: #333;
+    height: 100vh;
+    width: 100%;
     flex-direction: column;
+    clip-path: circle(0% at 100% 0%);
+    -webkit-clip-path: circle(0% at 100% 0%);
+    transition: all 0.5s ease-out;
+    pointer-events: none;
+  }
+
+  .nav-links.active {
+    clip-path: circle(100% at 100% 0%);
+    -webkit-clip-path: circle(100% at 100% 0%);
+    pointer-events: auto;
+  }
+  
+  .nav-links.active li {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .nav-links.open {
+    clip-path: circle(100% at 100% 0%);
+    -webkit-clip-path: circle(100% at 100% 0%);
+    pointer-events: auto;
   }
 
   .nav-links li {
     margin: 10px 0;
-  }
-}
-
-
- .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-top: 1px solid #ddd;
-    font-size: 14px;
-    height: 20px;
-    padding: 20px;
-    background-color: #f2f2f2;
-    color: #333;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    z-index: 2;
+    opacity: 0;
   }
 
-.button-container {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px;
+  menu-icon {
+    display: block;
+  }
 }

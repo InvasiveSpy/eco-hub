@@ -35,17 +35,17 @@ import Map from './componenets/map/Map';
 import logo from '../src/assets/pictures/logo.jpg'
 
 function Navbar() {
-  return (
-    <nav className="navbar">
-     <img src={logo}  alt="Logo" className="navbar-logo" />
-      <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/report-sightings">Report Sightings</Link></li>
-        <li><Link to="/informational">Informational</Link></li>
-        <li><Link to="/map">Map</Link></li>
-      </ul>
-    </nav>
-  );
+return (
+  <nav className="navbar">
+   <img src={logo}  alt="Logo" className="navbar-logo" />
+    <ul className="nav-links">
+      <li><Link to="/">Home</Link></li>
+      <li><Link to="/report-sightings">Report Sightings</Link></li>
+      <li><Link to="/informational">Informational</Link></li>
+      <li><Link to="/map">Map</Link></li>
+    </ul>
+  </nav>
+);
 }
 
 function Footer() {
@@ -61,7 +61,6 @@ function Footer() {
 
 function App() {
   return (
-    
     <div className="App">
     <Navbar></Navbar>
       <Routes>

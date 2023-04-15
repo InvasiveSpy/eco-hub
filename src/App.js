@@ -1,29 +1,3 @@
-// import './App.css';
-// import { Link, Route, Routes} from "react-router-dom";
-// import {useState, useEffect} from 'react';
-
-// import LandingPage from './componenets/landing-page/LandingPage';
-// import ReportSightings from './componenets/report-sightings/ReportSightings';
-// import Informational from './componenets/informational/Informational';
-// import Map from './componenets/map/Map';
-
-
-// function App() {
-//   return (
-//     <div className="App">
-// 				<LandingPage></LandingPage>
-//         <Routes>
-//         <Route exact path="/" component={LandingPage} />
-//         <Route path="/report-sightings" component={ReportSightings} />
-//         <Route path="/informational" component={Informational} />
-//         <Route path="/map" component={Map} />
-//       </Routes>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import './App.css';
 import { Link, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from 'react';
@@ -34,18 +8,30 @@ import Informational from './componenets/informational/Informational';
 import Map from './componenets/map/Map';
 import logo from '../src/assets/pictures/logo.jpg'
 
+
 function Navbar() {
-return (
-  <nav className="navbar">
-   <img src={logo}  alt="Logo" className="navbar-logo" />
-    <ul className="nav-links">
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/report-sightings">Report Sightings</Link></li>
-      <li><Link to="/informational">Informational</Link></li>
-      <li><Link to="/map">Map</Link></li>
-    </ul>
-  </nav>
-);
+  const [showMobileNav, setShowMobileNav] = useState(false);
+
+  const handleMobileNavToggle = () => {
+    setShowMobileNav(!showMobileNav);
+  };
+
+  return (
+    <nav className="navbar">
+      <img src={logo} alt="Logo" className="navbar-logo" />
+      <ul className={`nav-links ${showMobileNav ? 'show-mobile-nav' : ''}`}>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/report-sightings">Report Sightings</Link></li>
+        <li><Link to="/informational">Informational</Link></li>
+        <li><Link to="/map">Map</Link></li>
+      </ul>
+      <button className="mobile-nav-toggle" onClick={handleMobileNavToggle}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
+    </nav>
+  );
 }
 
 function Footer() {
@@ -62,14 +48,14 @@ function Footer() {
 function App() {
   return (
     <div className="App">
-    <Navbar></Navbar>
+    <Navbar />
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/report-sightings" element={<ReportSightings />} />
         <Route path="/informational" element={<Informational />} />
         <Route path="/map" element={<Map />} />
       </Routes>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }

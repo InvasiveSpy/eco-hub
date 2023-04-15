@@ -1,3 +1,4 @@
+/*STYLING FOR BAND AT TOP*/
 .band {
   position: relative;
   top: 0;
@@ -18,6 +19,8 @@
   transform: translateX(-50%);
   text-align: center;
 }
+
+/*REMOVES UNDERLINE ON BUTTONS AND TEXT*/
 
 a {
   text-decoration: none;
@@ -134,27 +137,41 @@ h2{
 
   @media (max-width: 768px) {
     /* adjust styles for screens with a max-width of 768px (common breakpoint for mobile devices) */
+
+    .band {
+      display: none;
+    }
+
     
     .info-container {
     /* grid-template-columns: 1fr; */
-    padding: 10px;
+    
+    margin-top: 80px;
     }
     
     .column {
     width: 100%;
     justify-content: center;
+    margin: 20px 0;
     }
     
-    .buttons-container {
-    position: relative;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    .button-container {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 45px;
+      text-align: center;
+      margin-top: 80px;
     }
     
     .button {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .button1-text,
+    .button2-text,
+    .button3-text {
+      font-size: 14px;
     }
     
     .video-bg video {

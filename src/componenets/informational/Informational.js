@@ -1,7 +1,6 @@
 import React from 'react';
 import './informational.css';
 
-import video2 from '../../assets/video/iguana.mp4';
 
 import plant from '../../assets/pictures/plant.jpg';
 import aquaticPlant from '../../assets/pictures/aquaticPlant.jpg';
@@ -12,9 +11,11 @@ import fish from '../../assets/pictures/fish.jpg';
 import mammal from '../../assets/pictures/mammal.jpg';
 import bird from '../../assets/pictures/bird.jpg';
 
+const video2 = "https://res.cloudinary.com/dacloudycloud/video/upload/v1681574594/iguana.mp4"
 
 
 export default function informational() {
+
   return (
 
     <div className="video-bg">

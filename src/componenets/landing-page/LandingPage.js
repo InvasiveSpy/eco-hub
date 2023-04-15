@@ -32,8 +32,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import video1 from "../../assets/video/lionfish.mp4";
 import './landing-page.css';
+const video1 = "https://res.cloudinary.com/dacloudycloud/video/upload/v1681574601/lionfish.mp4";
 
 
 

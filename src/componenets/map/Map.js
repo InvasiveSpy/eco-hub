@@ -1,11 +1,12 @@
 import React from 'react'
-import video4 from '../../assets/video/egret.mp4'
+
 
 export default function Map() {
+  const egretVideoUrl = "https://res.cloudinary.com/dacloudycloud/video/upload/v1681574569/egret.mp4"
   return (
     <div className="video-bg">
     <div className="container">
-   <video autoPlay muted loop className="video" src={video4}/>
+   <video autoPlay muted loop className="video" src={egretVideoUrl}/>
    </div>
    </div>
   )

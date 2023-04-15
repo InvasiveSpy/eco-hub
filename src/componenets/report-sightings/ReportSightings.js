@@ -1,5 +1,5 @@
 import React from 'react'
-import video3 from '../../assets/video/snail.mp4'
+const video3 = "https://res.cloudinary.com/dacloudycloud/video/upload/v1681574607/snail.mp4"
 
 export default function ReportSightings() {
   return (

@@ -12,26 +12,27 @@ export default function ReportSightings() {
   const [image, setImage] = useState({});
   const [nameOfPLant, setNameOfPLant] = useState("");
 
+  console.log(image);
+
   const apiKey = "blah";
   const model = "text-davinci-003";
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
+
+  
 
   const configuration = new Configuration({ apiKey });
   const openai = new OpenAIApi(configuration);
   
   console.log(nameOfPLant);
 
-  const handleInput = async () => {
+  const handleInput = async (plantName, city) => {
  
     setMessages((prevMessages) => [
       ...prevMessages,
       { text: input, sender: "user" },
     ]);
-
-    const plantName = "Pueraria montana";
-    const city = "Miami, FL";
-    
+ 
 
     const response = await openai.createCompletion({
       model: "text-davinci-003",
@@ -54,7 +55,7 @@ export default function ReportSightings() {
   const handleOnCompleted = files => {
     // console.log(files[0].base64_file)
     setImage(files[0]);
-    runSampleApiCall(files[0].base64_file);
+    // runSampleApiCall(files[0].base64_file);
   };
 
 const runSampleApiCall = (baseString) =>{
@@ -68,7 +69,7 @@ const runSampleApiCall = (baseString) =>{
     if(response.data && response.data.suggestions){
       console.log(response);
       setNameOfPLant(response.data.suggestions[0].plant_name);
-      handleInput();
+      handleInput(response.data.suggestions[0].plant_name, "Miami, FL");
     }
   })
   .catch((err)=>{
@@ -82,6 +83,9 @@ const runSampleApiCall = (baseString) =>{
 
   return (
     <div>
+      <div>
+        {image && <img src={image.base64_file}/>}
+      </div>
         
       <div>
         {messages.map((message, index) => (
@@ -96,7 +100,7 @@ const runSampleApiCall = (baseString) =>{
      
       <div className="video-bg">
         <div className="container">
-      <video autoPlay muted loop className="video" src={video3}/>
+      {!image.base64_file && <video autoPlay muted loop className="video" src={video3}/>}
 
       <div><ChatWindow city={"Miami, FL"} plantName={"Pueraria montana"} /></div>
         <div>

@@ -1,12 +1,12 @@
-import './App.css';
+import "./App.css";
 import { Link, Route, Routes } from "react-router-dom";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import LandingPage from './componenets/landing-page/LandingPage';
-import ReportSightings from './componenets/report-sightings/ReportSightings';
-import Informational from './componenets/informational/Informational';
-import Map from './componenets/map/Map';
-import logo from '../src/assets/pictures/logo.jpg'
+import LandingPage from "./componenets/landing-page/LandingPage";
+import ReportSightings from "./componenets/report-sightings/ReportSightings";
+import Informational from "./componenets/informational/Informational";
+import Map from "./componenets/map/Map";
+import logo from "../src/assets/pictures/logo.jpg";
 
 
 function Navbar() {
@@ -38,12 +38,11 @@ function Footer() {
   return (
     <nav className="footer">
       <ul className="nav-links">
-      <p>EcoHub | All Rights Reserved 2023</p>
+        <p>EcoHub | All Rights Reserved 2023</p>
       </ul>
     </nav>
   );
 }
-
 
 function App() {
   return (

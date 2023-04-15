@@ -31,8 +31,21 @@ function MyComponent() {
     console.log(currentPosition);
   };
 
-  const handleButtonClick = () => {
-    console.log(currentPosition);
+  const handleButtonClick = async () => {
+    const response = await fetch(
+      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${currentPosition.lat},${currentPosition.lng}&key=AIzaSyDFvWq5shTH42w1ObKuzUNKR4QY-kbtijA`
+    );
+    console.log({ response });
+    const data = await response.json();
+    if (data.results.length > 0) {
+      const city = data.results[0].address_components.find(
+        (component) =>
+          component.types.includes("locality") ||
+          component.types.includes("administrative_area_level_1")
+      );
+      console.log("Current Position: ", currentPosition);
+      console.log("City: ", city.long_name);
+    }
   };
 
   return (

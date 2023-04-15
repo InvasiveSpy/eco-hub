@@ -1,5 +1,6 @@
+/*STYLING FOR BAND AT TOP*/
 .band {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -10,7 +11,7 @@
 }
 
 .band-text {
-  position: absolute;
+  position: relative;
   top: 10px; /* add space between top of band and text */
   left: 50%;
   color: bisque;
@@ -19,84 +20,96 @@
   text-align: center;
 }
 
+/*REMOVES UNDERLINE ON BUTTONS AND TEXT*/
+
+a {
+  text-decoration: none;
+}
 
 .info-container {
   display: flex;
-  
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  max-width: 1200px;
-  background-color: #f2f2f2;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  max-width: 800px;
+}
+
+h2{
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(23, 74, 77);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  z-index: 2;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
   padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  margin: 0 20px;
-  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.button1-text,
+.button2-text,
+.button3-text{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(23, 74, 77);
+
 }
 
 
-/******/
-/* Style the buttons container */
-.buttons-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; 
-    text-align: center;
-  }
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+  position: relative;
+}
 
-/* Style the buttons */
 .button {
-    font-size: 24px;
-    padding: 16px 32px;
-    margin: 16px; 
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-    text-decoration: none;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
- 
-  }
-  
-  /* Style the primary button */
-  .button-report-sightings {
-    background-color: #119F63;
-    color: #fff;
-    border: 2px solid #7F993A;
-  }
-  
-  /* Style the secondary button */
-  .button-informational {
-    background-color: #0D6E45;
-    color: #fff;
-    border: 2px solid #7F993A;
-  }
-  
-  /* Style the tertiary button */
-  .button-map {
-    background-color: #053320;
-    color: #fff;
-    border: 2px solid #7F993A;
-  }
-  
-  /* Hover effect */
-  .button:hover {
-    background-color: #fff;
-    color: #053320;
-  }
-  
-  /* Click effect */
-  .button:active {
-    background-color: #7F993A;
-    color: #fff;
-    transform: scale(0.95);
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.button:hover {
+  background-color: #00bcd4;
+  cursor: pointer;
+}
+
+.button-container .button::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.button-container .button:hover::after {
+  opacity: 1;
+}
 
 
  /* Style the video background */
@@ -122,3 +135,49 @@
   }
 
 
+  @media (max-width: 768px) {
+    /* adjust styles for screens with a max-width of 768px (common breakpoint for mobile devices) */
+
+    .band {
+      display: none;
+    }
+
+    
+    .info-container {
+    /* grid-template-columns: 1fr; */
+    
+    margin-top: 80px;
+    }
+    
+    .column {
+    width: 100%;
+    justify-content: center;
+    margin: 20px 0;
+    }
+    
+    .button-container {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 45px;
+      text-align: center;
+      margin-top: 80px;
+    }
+    
+    .button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .button1-text,
+    .button2-text,
+    .button3-text {
+      font-size: 14px;
+    }
+    
+    .video-bg video {
+    position: static;
+    width: 100%;
+    height: auto;
+    transform: none;
+    }
+    }

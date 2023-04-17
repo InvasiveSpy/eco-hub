@@ -13,7 +13,7 @@ export default function LandingPage() {
       <div class="info-container">
             
       <div class="button-container">
-      <h2>How It Works</h2>
+      {/* <h2>How It Works</h2> */}
       <Link to="/report-sightings" class="column" id="button button-report-sightings">
       <button className="button button-report-sightings">Report Sightings</button>
       <div class="button1-text">See a species you think is invasive? Take a picture and find out!</div>

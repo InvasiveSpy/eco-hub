@@ -6,21 +6,9 @@ import LandingPage from "./componenets/landing-page/LandingPage";
 import ReportSightings from "./componenets/report-sightings/ReportSightings";
 import Informational from "./componenets/informational/Informational";
 import Map from "./componenets/map/Map";
-import Navbar from "../src/componenets/nav-bar/NavBar"
+import Navbar from "../src/componenets/nav-bar/NavBar";
+import Footer from "./componenets/footer/Footer";
 
-
-
-
-
-function Footer() {
-  return (
-    <nav className="footer">
-      <ul className="nav-links">
-        <p>EcoHub | All Rights Reserved 2023</p>
-      </ul>
-    </nav>
-  );
-}
 
 function App() {
   return (

@@ -9,7 +9,7 @@ export default function LandingPage() {
     <div className="video-bg">
       <div class="band"><h3 className="band-text">Click on a Species to learn more</h3></div>
       <video autoPlay muted loop className="video" src={video1}/>
-      
+   
       <div class="info-container">
             
       <div class="button-container">

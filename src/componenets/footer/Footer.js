@@ -5,7 +5,7 @@ export default function Footer() {
     return (
       <nav className="footer">
         <ul className="nav-links">
-          <p>EcoHub | All Rights Reserved 2023</p>
+          <h5>EcoHub | All Rights Reserved 2023</h5>
         </ul>
       </nav>
     );

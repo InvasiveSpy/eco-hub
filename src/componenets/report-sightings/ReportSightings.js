@@ -78,14 +78,12 @@ const runSampleApiCall = (baseString) =>{
   
 }
 
-
-
-
   return (
     <div>
-      <div>
-        {image && <img src={image.base64_file}/>}
-      </div>
+
+    <div className="image-container">
+    {image && <img src={image.base64_file}/>}
+    </div>
         
       <div>
         {messages.map((message, index) => (

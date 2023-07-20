@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/eco-hub/static/css/main.fdf22685.css",
-    "main.js": "/eco-hub/static/js/main.4757f7f5.js",
+    "main.js": "/eco-hub/static/js/main.69dc774f.js",
     "static/media/fish.jpg": "/eco-hub/static/media/fish.e2ba6e6e3327cb315c26.jpg",
     "static/media/mammal.jpg": "/eco-hub/static/media/mammal.b23d0b684abde6cb1348.jpg",
     "static/media/reptile.jpg": "/eco-hub/static/media/reptile.168de463c5809c9bd891.jpg",
@@ -13,10 +13,10 @@
     "static/media/logo.jpg": "/eco-hub/static/media/logo.dd46472f5a715cba33ca.jpg",
     "index.html": "/eco-hub/index.html",
     "main.fdf22685.css.map": "/eco-hub/static/css/main.fdf22685.css.map",
-    "main.4757f7f5.js.map": "/eco-hub/static/js/main.4757f7f5.js.map"
+    "main.69dc774f.js.map": "/eco-hub/static/js/main.69dc774f.js.map"
   },
   "entrypoints": [
     "static/css/main.fdf22685.css",
-    "static/js/main.4757f7f5.js"
+    "static/js/main.69dc774f.js"
   ]
 }

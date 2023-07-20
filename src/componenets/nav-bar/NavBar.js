@@ -17,7 +17,7 @@ export default function Navbar() {
       <nav className="navbar">
         <img src={logo} alt="Logo" className="navbar-logo" />
         <ul className={`nav-links ${showMobileNav ? 'show-mobile-nav' : ''}`}>
-          {/* <li><Link to="/eco-hub">Home</Link></li> */}
+          <li><Link to="/eco-hub">Home</Link></li>
           <li><Link to="/report-sightings">Report Sightings</Link></li>
           <li><Link to="/informational">Informational</Link></li>
           <li><Link to="/map">Map</Link></li>
